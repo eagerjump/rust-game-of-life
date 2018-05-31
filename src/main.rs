@@ -24,7 +24,6 @@ fn main() {
 
     impl Universe {
 
-
         fn get_index(&self, row: u32, col: u32) -> usize {
             (row * self.width + col) as usize
         }
@@ -46,7 +45,7 @@ fn main() {
             count
         }
 
-        pub fn update(&mut self){
+        pub fn update(&mut self) {
             let mut next = self.cells.clone();
 
             for row in 0..self.height {
@@ -77,7 +76,7 @@ fn main() {
         let cells = (0..width*height)
             .map(|_| {
                 let a = rand::random::<f32>();
-                if a < 0.3 {
+                if a < 0.2 {
                     Cell::Alive
                 } else {
                     Cell::Dead
@@ -105,12 +104,13 @@ fn main() {
         }
     }
 
+    // Instantiate the universe
     let mut univ = create_univ();
     println!("{}", univ);
 
     loop {
         univ.update();
         println!("{}", univ);
-        sleep(Duration::from_millis(200));
+        sleep(Duration::from_millis(200)); // update the universe every 200 ms
     }
 }
