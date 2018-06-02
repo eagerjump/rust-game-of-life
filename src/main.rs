@@ -1,11 +1,8 @@
-#![allow(unused_imports)]
-#![allow(dead_code)]
 extern crate rand;
 
 use std::fmt;
 use std::time::Duration;
 use std::thread::sleep;
-use rand::thread_rng;
 
 fn main() {
 
@@ -61,11 +58,9 @@ fn main() {
                         (Cell::Dead, 3)                     => Cell::Alive,
                         (otherwise, _)                      => otherwise,
                     };
-
                     next[idx] = next_cell;
                 }
             }
-            
             self.cells = next;
         }
     }
