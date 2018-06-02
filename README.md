@@ -4,3 +4,4 @@ To start the game,
 ```
 cargo run
 ```
+it will be displayed as stdout
